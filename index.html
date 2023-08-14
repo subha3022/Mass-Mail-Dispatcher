@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mass Mail Dispatcher</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5573c55448.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+</head>
+<body>
+
+    <div class="hero">
+
+        <form onsubmit="sendEmail(); reset(); return false;">
+
+            <div class="input-group">
+                <h1> Mass-Mail Dispatcher </h1>
+
+            </div>
+            <div class="row">
+                <div class="input-group">
+                    <input type="text" id="name" required>
+                     <label for="name"><i class="fa-solid fa-user"></i> Your Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="sender" required>
+                     <label for="email"><i class="fa-solid fa-envelope"></i> From(Email Id)</label>
+                </div>
+
+            </div>
+            
+            <div class="input-group">
+                <input type="text" id="subject" required>
+                 <label for="Subject"><i class="fa-solid fa-comment"></i>  Write Subject</label>
+            </div>
+            <div class="input-group">
+                <textarea id="message" rows="8" required></textarea>
+                 <label for="message"><i class="fa-solid fa-comments"></i>  Your Message</label>
+            </div>
+            
+            <button type="submit"><i class="fa-solid fa-paper-plane"></i> SEND</button>
+              
+        </form>
+        <form>
+        <div class="input-file">
+            <input type="file" id="upload" accept="text/csv">
+        </div>
+    </form>
+
+</div>
+
+    <div class="tables">
+        <div class="valTab">
+            <table id="val">
+                <tr>
+                    <td>
+                         <h2>Valid Emails : <span id="valCount"></span></h2>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="invalTab">
+            <table id="inval">
+                <tr>
+                    <td>
+                         <h2>Invalid Emails : <span id="invalCount"></span></h2>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+ <hr>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="index.js"></script>
+
+
+    
+
+</body>
+</html>
